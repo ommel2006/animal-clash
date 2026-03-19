@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animal Clash</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp"/>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <!-- Date Picker -->
+  <div class="date-picker">
+    <label for="demo-date"></label>
+    <input type="date" id="demo-date" name="demo-date" min="2024-01-01" max="2025-01-01">
+  </div>
+
+  <main id="content">
+    <div id="home" class="section hidden">
+      <div class="home-container">
+
+        <!-- LEFT SIDE -->
+        <div class="home-left">
+          <h1 class="home-greeting">Hello, <span id="playerName">emi</span>!</h1>
+
+          <div class="home-chart-card">
+            <h3>Recent Stocks Performance</h3>
+            <div id="recentStocksChart" class="chart-placeholder">
+              
+            </div>
+          </div>
+          <div class="balance-summary">
+            <h3>Finances</h3>
+            <div class="balance-row">Balance: $2,450</div>
+            <div class="balance-row">Savings: $1,200</div>
+            <div class="balance-row">Stocks: $3,870</div>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="home-right">
+          <div class="home-top-blocks">
+            <div class="deck">
+              <h2>Battle animals</h2>
+              <div class="deck-collection">
+                <div class="collection-card" id="finance">
+                  <img src="images/Bear.png">
+                  <p>Level 3</p>
+                </div>
+                <div class="collection-card" id="tech">
+                  <img src="images/CLEVERCAT.png">
+                  <p>Level 5</p>
+                </div>
+                <div class="collection-card" id="healthcare">
+                  <img src="images/Serpent.png">
+                  <p>Level 2</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="home-stocks-list">
+              <h3>Current Stocks</h3>
+              <table class="stocks-table">
+                <thead>
+                </thead>
+                <tbody id="userStocksTable">
+                  <tr><td>APL</td><td>$150.25</td><td>10</td></tr>
+                  <tr><td>GGL</td><td>$2850.10</td><td>5</td></tr>
+                  <tr><td>HCA</td><td>$72.30</td><td>8</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="reminders-card">
+            <h3>Reminders</h3>
+            <ul class="reminder-list">
+              <li><span class="material-symbols-sharp">check_box_outline_blank</span> Leo needs food today</li>
+              <li><span class="material-symbols-sharp">check_box_outline_blank</span> Check out your tips</li>
+              <li><span class="material-symbols-sharp">check_box_outline_blank</span> Ellie’s health is at 40%</li>
+              <li><span class="material-symbols-sharp">check_box_outline_blank</span> Foxy will start losing HP in 2 days</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    
+    <!-- PET SECTION -->
+    <div id="pet" class="section hidden">
+      <h1 class="pets-title">Pets</h1>
+      <div class="pets-container">
+
+        <!-- Left: Deck -->
+        <div class="deck">
+          <h2>Battle animals</h2>
+          <div class="deck-collection">
+            <div class="collection-card" id="finance">
+              <img src="images/Bear.png">
+              <p>Level 3</p>
+            </div>
+            <div class="collection-card" id="tech">
+              <img src="images/CLEVERCAT.png">
+              <p>Level 5</p>
+            </div>
+            <div class="collection-card" id="healthcare">
+              <img src="images/Serpent.png">
+              <p>Level 2</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Middle: Pets Stats -->
+        <div class="inventory">
+          <h2>Inventory</h2>
+          <div class="inventory-item">
+            <p>Balance: $1200</p>
+          </div>
+          <div class="inventory-item">
+            <p>Medicine: 4</p>
+          </div>
+          <div class="inventory-item">
+            <p>Food: 6</p>
+          </div>
+
+          <h2>Shop</h2>
+          <div class="inventory-item">
+            <p>Medicine:</p>
+            <button class="inv-btn">$20</button>
+          </div>
+          <div class="inventory-item">
+            <p>Food:</p>
+            <button class="inv-btn">$10</button>
+          </div>
+        </div>
+
+        <!-- Right: Collection -->
+        <div class="collection">
+          <h2>Animal collection</h2>
+          <div class="collection-scroll">
+            <div class="collection-card" id="finance">
+              <img src="images/Bear.png">
+              <p>Level 3</p>
+            </div>
+            <div class="collection-card" id="tech">
+              <img src="images/CLEVERCAT.png">
+              <p>Level 5</p>
+            </div>
+            <div class="collection-card" id="healthcare">
+              <img src="images/Serpent.png">
+              <p>Level 2</p>
+            </div>
+            <div class="collection-card" id="energy">
+              <img src="images/SolarDog.png">
+              <p>Level 3</p>
+            </div>
+            <div class="collection-card" id="food">
+              <img src="images/Duck.png">
+              <p>Level 5</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="money" class="section hidden">
+      <h1 class="money-title">Finances</h1>
+
+      <div class="money-container">
+        <!-- LEFT SIDE: Search & Sectors -->
+        <div class="search-block">
+          <div class="search-box">
+            <input type="text" id="company-search" placeholder="Search company by ticker..." />
+          </div>
+          <p class="search-or">...or search by sector</p>
+
+          <div class="sector-list">
+            <div class="sector-item">
+              <img src="images/CLEVERCAT.png" alt="Tech" />
+              <span>Tech</span>
+            </div>
+            <div class="sector-item">
+              <img src="images/Duck.png" alt="Food" />
+              <span>Food</span>
+            </div>
+            <div class="sector-item">
+              <img src="images/Serpent.png" alt="Healthcare" />
+              <span>Healthcare</span>
+            </div>
+            <div class="sector-item">
+              <img src="images/Bear.png" alt="Finance" />
+              <span>Finance</span>
+            </div>
+            <div class="sector-item">
+              <img src="images/SolarDog.png" alt="Energy" />
+              <span>Energy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDE: Balance, Savings, Stocks -->
+        <div class="finance-block">
+          <div class="balance-card">
+            <h3>Your Finances</h3>
+            <p>Balance: $1200</p>
+            <p>Savings: $500</p>
+            <p>Stocks Owned: $500</p>
+          </div>
+
+          <div class="savings-card">
+            <h3>Add to Savings</h3>
+            <div class="savings-card">
+              <div class="savings-action">
+                $
+                <input type="number" id="savings-amount" placeholder="Amount" min="0" />
+                <button class="savings-btn">Add to Savings</button>
+                <div class="savings-tooltip">
+                  Your savings generate passive interest every in-game week.
+                  Adding more increases your financial security, but reduces your available cash for trading.
+                  Interest is 3.5%.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="coach" class="section hidden">
+      <div class="coach-container">
+        <!-- Left Side: Pibble and Tips -->
+        <div class="coach-left">
+          <img src="images/pibble.png" alt="Pibble AI Coach" class="coach-image">
+
+          <p class="coach-intro">I am Pibble... your AI financial advisor</p>
+
+          <div class="coach-tips">
+            <button class="tip-btn" data-tip="budget">Create a monthly budget</button>
+            <button class="tip-btn" data-tip="savings">Set aside 20% for savings</button>
+            <button class="tip-btn" data-tip="invest">Diversify your investments</button>
+            <button class="tip-btn" data-tip="emergency">Build an emergency fund</button>
+          </div>
+        </div>
+
+        <!-- Right Side: Explanation Panel -->
+        <div class="coach-right">
+          <p id="tip-details" class="tip-details">
+            Click on a tip for a more profound explanation.
+          </p>
+        </div>
+
+      </div>
+    </div>
+    <div id="battle" class="section hidden">
+      <div class="battle-container">
+        
+        <!-- LEFT: Global Ranking -->
+        <div class="battle-ranking">
+          <h2>Global Ranking</h2>
+          <table class="ranking-table">
+            <tr><th>#</th><th>Player</th><th>Wins</th></tr>
+            <tr><td>1</td><td>Romm</td><td>24</td></tr>
+            <tr><td>2</td><td>AI_TechCat</td><td>19</td></tr>
+            <tr><td>3</td><td>SolarDog</td><td>17</td></tr>
+          </table>
+        </div>
+
+        <!-- MIDDLE: Battle Screen -->
+        <div class="battle-screen">
+          <!-- Frame inicial -->
+          <div class="battle-frame" id="battle-start">
+            <button class="battle-btn" id="start-battle-btn">BATTLE</button>
+          </div>
+
+          <!-- Frame de Ronda 1 -->
+          <div class="battle-frame hidden" id="battle-round1">
+            <h2>Round 1</h2>
+            <div class="battle-round-info">
+              <div class="battle-opponent">
+                <h3>Opponent: AI_TechCat</h3>
+                <div class="deck-collection">
+                  <div class="collection-card" id="tech">
+                    <img src="images/CLEVERCAT.png">
+                    <p>Level 5</p>
+                  </div>
+                  <div class="collection-card" id="finance">
+                    <img src="images/Bear.png">
+                    <p>Level 3</p>
+                  </div>
+                  <div class="collection-card" id="healthcare">
+                    <img src="images/Serpent.png">
+                    <p>Level 2</p>
+                  </div>
+                </div>
+              </div>
+
+              <h2>VS</h2>
+
+              <div class="battle-player">
+                <h3>You: Romm</h3>
+                <form class="deck-collection selectable-deck">
+                  <label class="collection-card" for="pet1">
+                    <img src="images/Serpent.png" alt="Healthcare">
+                    <p>Level 2</p>
+                    <input type="radio" name="pet-choice" id="pet1" value="healthcare">
+                    <span class="pixel-radio"></span>
+                  </label>
+
+                  <label class="collection-card" for="pet2">
+                    <img src="images/Duck.png" alt="Food">
+                    <p>Level 5</p>
+                    <input type="radio" name="pet-choice" id="pet2" value="food">
+                    <span class="pixel-radio"></span>
+                  </label>
+
+                  <label class="collection-card" for="pet3">
+                    <img src="images/SolarDog.png" alt="Energy">
+                    <p>Level 3</p>
+                    <input type="radio" name="pet-choice" id="pet3" value="energy">
+                    <span class="pixel-radio"></span>
+                  </label>
+                </form>
+
+                <button class="submit-choice-btn">Submit Choice</button>
+              </div>
+
+            </div>
+          </div>
+          <!-- Frame de Batalla Actual -->
+          <div class="battle-frame hidden" id="current-battle">
+            <h2 class="battle-title">Battle in Progress!</h2>
+
+            <!-- Sección central con los dos combatientes -->
+            <div class="battle-duel">
+              <div class="collection-card" id="opponent-card">
+                <img src="images/CLEVERCAT.png" alt="Opponent Pet">
+                <p>Level 5</p>
+              </div>
+
+              <h2 class="vs-title">VS</h2>
+
+              <div class="collection-card" id="player-card">
+                <img src="images/SolarDog.png" alt="Your Pet">
+                <p>Level 3</p>
+              </div>
+            </div>
+
+            <!-- Log de combate -->
+            <div class="battle-log">
+              <p><strong>Battle Log:</strong></p>
+              <div id="battle-log-text">
+                <p>CleverCat attacks first with Laser Scratch! (-10 HP)</p>
+                <p>SolarDog retaliates with Solar Flare! (-12 HP)</p>
+                <p>CleverCat fainted. You won the round!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Achievements -->
+        <div class="battle-achievements">
+          <h2>Achievements</h2>
+          <div class="achievements-section">
+            <h3>Pending</h3>
+            <ul>
+              <li><span class="material-symbols-sharp">check_box_outline_blank</span>Win 3 battles in a row</li>
+              <li><span class="material-symbols-sharp">check_box_outline_blank</span>Use 5 different pets</li>
+            </ul>
+          </div>
+          <div class="achievements-section">
+            <h3>Recent</h3>
+            <ul>
+              <li><span class="material-symbols-sharp">check_box</span>First Victory!</li>
+              <li><span class="material-symbols-sharp">check_box</span>Serpent Savior reached Level 5</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <nav>
+    <button class="nav-btn" onclick="showSection('pet')">
+      <span class="material-symbols-sharp">pet_supplies</span>
+    </button>
+    <button class="nav-btn" onclick="showSection('money')">
+      <span class="material-symbols-sharp">attach_money</span>
+    </button>
+    <button class="nav-btn" onclick="showSection('home')">
+      <span class="material-symbols-outlined">home</span>
+    </button>
+    <button class="nav-btn" onclick="showSection('coach')">
+      <span class="material-symbols-outlined">smart_toy</span>
+    </button>
+    <button class="nav-btn" onclick="showSection('battle')">
+      <span class="material-symbols-sharp">swords</span>
+    </button>
+  </nav>
+</body>
+</html>
